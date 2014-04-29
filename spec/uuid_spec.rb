@@ -8,7 +8,7 @@ describe UuidService::Uuid, '#value' do
   end
 
   it "should return unique uuids on each call" do
-    uuids = 100.times.map do |_|
+    uuids = 1000.times.map do |_|
       UuidService::Uuid.new.value
     end
     expect(uuids.uniq!).to be(nil)

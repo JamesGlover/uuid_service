@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rack"
   spec.add_runtime_dependency "puma"
   spec.add_runtime_dependency "rack-accept"
+  spec.add_runtime_dependency "uuidtools"
 end

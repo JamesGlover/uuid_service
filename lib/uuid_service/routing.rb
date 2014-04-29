@@ -43,7 +43,7 @@ module UuidService
     end
 
     def lookup(route,method,accepts)
-      ep = @routes[route]||UnknownEndpoint.new
+      ep = routes[route]||UnknownEndpoint.new
       ep.do(accepts)
     end
 
