@@ -16,6 +16,8 @@ module UuidService
         @accepts[accepts.best_of(accepted_types)].call()
       end
 
+      private
+
       def accepted_types
         @accepts.keys
       end
@@ -32,6 +34,14 @@ module UuidService
       yield new_route
     end
 
+    def lookup(route,method,accepts)
+      return UnknownEndpoint.new.do(nil) unless method == 'GET'
+      ep = routes[route]||UnknownEndpoint.new
+      ep.do(accepts)
+    end
+
+    private
+
     def register(route_name)
       Endpoint.new(route_name).tap do |ep|
         routes[route_name] = ep
@@ -40,12 +50,6 @@ module UuidService
 
     def routes
       @routes ||= Hash.new
-    end
-
-    def lookup(route,method,accepts)
-      return UnknownEndpoint.new.do(nil) unless method == 'GET'
-      ep = routes[route]||UnknownEndpoint.new
-      ep.do(accepts)
     end
 
   end
