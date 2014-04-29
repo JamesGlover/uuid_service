@@ -43,6 +43,7 @@ module UuidService
     end
 
     def lookup(route,method,accepts)
+      return UnknownEndpoint.new.do(nil) unless method == 'GET'
       ep = routes[route]||UnknownEndpoint.new
       ep.do(accepts)
     end

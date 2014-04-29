@@ -25,6 +25,15 @@ describe UuidService::Service, '#call' do
 
   end
 
+  it "returns a 404 response for non-GET requests" do
+    response = Rack::MockRequest.new(UuidService::Service.new).post('/', 'HTTP_ACCEPT'=>"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+
+    expect(response.status).to eq(404)
+    expect(response.body).to eq('{"error":"page not found"}')
+    expect(response.original_headers["Content-Type"]).to eq("application/json")
+
+  end
+
   it "returns a 406 response for non-json requests" do
 
     response = Rack::MockRequest.new(UuidService::Service.new).get('/', 'HTTP_ACCEPT'=>"text/html;q=0.9")
