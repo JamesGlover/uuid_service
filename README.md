@@ -1,24 +1,11 @@
 # UuidService
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'uuid_service'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install uuid_service
+A simple webservice which responds to GET requests and returns a UUID
 
 ## Usage
 
-TODO: Write usage instructions here
+start with bundle exec puma -p30001
+make a GET request to /
 
 ## Contributing
 
