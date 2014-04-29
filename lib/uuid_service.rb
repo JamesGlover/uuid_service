@@ -14,7 +14,7 @@ module UuidService
     end
 
     def call(env)
-      req = ::Rack::Request.new(env)
+      req = Rack::Request.new(env)
       acc = Rack::Accept::MediaType.new(env['HTTP_ACCEPT'])
       Service.lookup(req.path,req.request_method,acc)
     end
