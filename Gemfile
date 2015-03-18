@@ -13,3 +13,7 @@ group :development do
   gem "rspec"
   gem "warbler"
 end
+
+group :without_warbler do
+  gem 'puma'
+end

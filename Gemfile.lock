@@ -16,6 +16,8 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
       spoon (~> 0.0)
+    puma (2.8.2-java)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -47,6 +49,7 @@ DEPENDENCIES
   bundler
   jruby-rack
   pry
+  puma
   rack
   rack-accept
   rake
