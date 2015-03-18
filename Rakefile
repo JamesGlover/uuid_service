@@ -1,2 +1,3 @@
-require "bundler/gem_tasks"
 
+require 'warbler'
+Warbler::Task.new

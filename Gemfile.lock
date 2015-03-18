@@ -1,23 +1,22 @@
-PATH
-  remote: .
-  specs:
-    uuid_service (0.0.1)
-      puma
-      rack
-      rack-accept
-      uuidtools
-
 GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.0)
     diff-lcs (1.2.5)
+    ffi (1.9.8-java)
+    jruby-jars (1.7.19)
+    jruby-rack (1.1.18)
     method_source (0.8.2)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    puma (2.8.2)
+    pry (0.9.12.6-java)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+      spoon (~> 0.0)
+    puma (2.8.2-java)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-accept (0.4.5)
@@ -31,15 +30,29 @@ GEM
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
+    rubyzip (1.1.7)
     slop (3.5.0)
+    spoon (0.0.4)
+      ffi
     uuidtools (2.1.4)
+    warbler (1.4.5)
+      jruby-jars (>= 1.5.6, < 2.0)
+      jruby-rack (>= 1.1.1, < 1.3)
+      rake (>= 0.9.6)
+      rubyzip (>= 0.9, < 1.2)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.6)
+  bundler
+  jruby-rack
   pry
+  puma
+  rack
+  rack-accept
   rake
   rspec
-  uuid_service!
+  uuidtools
+  warbler

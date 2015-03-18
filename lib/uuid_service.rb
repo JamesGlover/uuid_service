@@ -1,5 +1,5 @@
-require "uuid_service/version"
-require "uuid_service/routing"
+require "lib/uuid_service/version"
+require "lib/uuid_service/routing"
 require "rack"
 require "rack/accept"
 
